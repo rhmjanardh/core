@@ -32,7 +32,7 @@ spec:
       - 172.30.0.0/16
     networkType: OVNKubernetes
     nodes:
-    - bmcAddress: redfish-virtualmedia://10.19.142.66/redfish/v1/Systems/1
+    - bmcAddress: idrac-virtualmedia://10.19.42.66/redfish/v1/Systems/System.Embedded.1
       bmcCredentialsName:
         name: sno66-bmc-secret
       bootMACAddress: b4:83:51:00:b4:28
@@ -40,7 +40,7 @@ spec:
       rootDeviceHints:
         deviceName: /dev/sda
       cpuset: "0-1,30-33,62-63"
-      hostName: sno66.core.r450.org
+      hostName: sno66.r450.org
       nodeNetwork:
           interfaces:
             - name: "ens1f0"
