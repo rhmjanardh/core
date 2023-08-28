@@ -34,7 +34,7 @@ spec:
     nodes:
     - bmcAddress: idrac-virtualmedia://10.19.142.66/redfish/v1/Systems/System.Embedded.1
       bmcCredentialsName:
-        name: sno66-bmc-secret
+        name: "sno66-bmc-secret"
       bootMACAddress: b4:83:51:00:b4:28
       bootMode: UEFI
       rootDeviceHints:
