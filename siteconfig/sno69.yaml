@@ -1,0 +1,69 @@
+# sno.yaml - test message to trigger synch#
+apiVersion: ran.openshift.io/v1
+kind: SiteConfig
+metadata:
+  name: "sno69"
+  namespace: "sno69"
+  labels:
+    forcesync: "2"
+spec:
+  baseDomain: "r450.org"
+  pullSecretRef:
+    name: "assisted-deployment-pull-secret-sno69"
+  clusterImageSetNameRef: "img4.13.8-x86-64-appsub"
+  sshPublicKey: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILRAdM2iuVIrE6jgrjC8mCbbeVAXlMqRbCY0YtqxdzWB root@core-infra"
+  clusters:
+  - additionalNTPSources:
+    - pool.ntp.org
+    - clock.corp.redhat.com
+    clusterLabels:
+      common: true
+      group-du-sno: ""
+      sites: sno
+    clusterName: sno69
+    clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+    clusterProfile: du
+    clusterType: sno
+    machineNetwork:
+      - cidr: 10.19.1.0/25
+    serviceNetwork:
+      - 172.30.0.0/16
+    networkType: OVNKubernetes
+    nodes:
+    - bmcAddress: idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1
+      bmcCredentialsName:
+        name: "sno69-bmc-secret"
+      bootMACAddress: b4:83:51:00:b6:0c
+      bootMode: UEFI
+      rootDeviceHints:
+        deviceName: /dev/sda
+      cpuset: "0-1,30-33,62-63"
+      hostName: sno69.r450.org
+      nodeNetwork:
+          interfaces:
+            - name: "ens1f0"
+              macAddress: "b4:83:51:00:b6:0c"
+          config:
+            interfaces:
+              - name: "ens1f0"
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 10.19.1.69
+                    prefix-length: 25
+            dns-resolver:
+              config:
+                search:
+                - r450.org 
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
