@@ -35,6 +35,7 @@ spec:
     - bmcAddress: idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1
       bmcCredentialsName:
         name: "sno69-bmc-secret"
+        disableCertificateVerification: "False"
       bootMACAddress: b4:83:51:00:b6:0c
       bootMode: UEFI
       rootDeviceHints:
