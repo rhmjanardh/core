@@ -3,3 +3,4 @@ kind: Kustomization
 
 generators:
 - sno66.yaml
+- sno69.yaml
