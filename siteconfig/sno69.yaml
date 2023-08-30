@@ -4,8 +4,6 @@ kind: SiteConfig
 metadata:
   name: "sno69"
   namespace: "sno69"
-  labels:
-    forcesync: "2"
 spec:
   baseDomain: "r450.org"
   pullSecretRef:
@@ -19,7 +17,7 @@ spec:
     clusterLabels:
       common: true
       group-du-sno: ""
-      sites: sno
+      sites: sno69
     clusterName: sno69
     clusterNetwork:
       - cidr: 10.128.0.0/14
@@ -32,16 +30,16 @@ spec:
       - 172.30.0.0/16
     networkType: OVNKubernetes
     nodes:
-    - bmcAddress: idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1
+    - hostName: sno69.r450.org
+      role: master
+      bmcAddress: idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1
       bmcCredentialsName:
         name: "sno69-bmc-secret"
-        disableCertificateVerification: "False"
       bootMACAddress: b4:83:51:00:b6:0c
       bootMode: UEFI
       rootDeviceHints:
         deviceName: /dev/sda
-      cpuset: "0-1,30-33,62-63"
-      hostName: sno69.r450.org
+      cpuset: "0-1,30-33,62-63"      
       nodeNetwork:
           interfaces:
             - name: "ens1f0"
