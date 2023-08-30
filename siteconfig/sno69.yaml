@@ -23,7 +23,7 @@ spec:
       - cidr: 10.128.0.0/14
         hostPrefix: 23
     clusterProfile: du
-    clusterType: sno
+    clusterType: sno69
     machineNetwork:
       - cidr: 10.19.1.0/25
     serviceNetwork:
@@ -54,6 +54,7 @@ spec:
                   address:
                   - ip: 10.19.1.69
                     prefix-length: 25
+                  dhcp: false
             dns-resolver:
               config:
                 search:
