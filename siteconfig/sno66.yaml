@@ -54,6 +54,7 @@ spec:
                   address:
                   - ip: 10.19.1.66
                     prefix-length: 25
+                  dhcp: false
             dns-resolver:
               config:
                 search:
