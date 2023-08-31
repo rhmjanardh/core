@@ -40,7 +40,7 @@ spec:
         bootMACAddress: "b4:83:51:00:b6:10"
         bootMode: "UEFI"
         rootDeviceHints:
-          deviceName: "/dev/vda"
+          deviceName: "/dev/sda"
         cpuset: "0-1,9-12,14-15"
         nodeNetwork:
           interfaces:
@@ -81,7 +81,7 @@ spec:
         bootMACAddress: "B4:83:51:00:B4:28"
         bootMode: "UEFI"
         rootDeviceHints:
-          deviceName: "/dev/vda"
+          deviceName: "/dev/sda"
         cpuset: "0-1,9-12,14-15"
         nodeNetwork:
           interfaces:
@@ -123,7 +123,7 @@ spec:
         bootMACAddress: "B4:83:51:00:B6:0C"
         bootMode: "UEFI"
         rootDeviceHints:
-          deviceName: "/dev/vda"
+          deviceName: "/dev/sda"
         cpuset: "0-1,9-12,14-15"
         nodeNetwork:
           interfaces:
