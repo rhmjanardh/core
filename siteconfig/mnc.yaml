@@ -30,11 +30,11 @@ spec:
       - pool.nyp.org
       - clock.corp.redhat.com
     nodes:
-      - hostName: "mno-master-0.core.450.org"
+      - hostName: "mno-master-0.core.r450.org"
         role: "master"
         bmcAddress: "idrac-virtualmedia://10.19.142.64/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName: 
-          name: "mnc-bmc-secret"
+          name: "core-bmc-secret"
         bmc:
           disableCertificateVerification: "true"        
         bootMACAddress: "b4:83:51:00:b6:10"
@@ -78,7 +78,7 @@ spec:
         automatedCleaningMode: "metadata"
         bmcAddress: "idrac-virtualmedia://10.19.142.66/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName: 
-          name: "mnc-bmc-secret"       
+          name: "core-bmc-secret"
         bootMACAddress: "B4:83:51:00:B4:28"
         bootMode: "UEFI"
         rootDeviceHints:
@@ -119,7 +119,7 @@ spec:
         role: "master"
         bmcAddress: "idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName: 
-          name: "mnc-bmc-secret"
+          name: "core-bmc-secret"
         bmc:
           disableCertificateVerification: "true"        
         bootMACAddress: "B4:83:51:00:B6:0C"
