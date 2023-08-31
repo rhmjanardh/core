@@ -6,7 +6,7 @@ metadata:
 spec:
   baseDomain: "r450.org"
   pullSecretRef:
-    name: "assisted-deployment-pull-secret-mnc"
+    name: "assisted-deployment-pull-secret-core"
   clusterImageSetNameRef: "img4.13.8-x86-64-appsub"
   sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCytEGtXcIaePsKb1rpeL9ynF3FZIfoC394xnau+jdn417N6PM+g2YWz5fk+T3zfuIvI9bMXGqROIW/6NmxJCMIj0xfmfThBmYpDW42Ur5bXh9U1EOmb/bzfwwkdOVZEItwkC5nDM/9kZR9A1iHmMn0MFTko2vyCBbzvgw6Mvtv0Oz/VMkrbLABxlt513lueLJk1PnVIk5hi7B0R74y19FaiJOj6aXCmEfjObVhJASJxnEEQsHGXisqB8T47/rS23pxjoYJlbaEidq/V/FPvGt3Ftxuf4m9cUEmp7wxkG1vq40C4AaeZ/ypy0dMq6q9vUgCO7EKEbtu64kCmu+r+MfePG2H+raTEQbcqD1yewo3bWrDGGTKN7/EiQ3pl/KsptrxxJBTSlp5B2IPvbE7WveWNLG1cWniH+A9a+1GZo5YO69GSz7iRAs7w38fHb0pNn0TKh8lzTxOEijR3Sdsvjk6+Mx4a+7/huRnIO5Uhr6XNfWge+YnRgUJ7G2rBtJfl7M= root@core-infra"
   clusters:
