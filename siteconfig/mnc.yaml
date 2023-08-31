@@ -1,0 +1,160 @@
+apiVersion: ran.openshift.io/v1
+kind: SiteConfig
+metadata:
+  name: "mnc"
+  namespace: "mnc"
+spec:
+  baseDomain: "r450.org"
+  pullSecretRef:
+    name: "assisted-deployment-pull-secret-mnc"
+  clusterImageSetNameRef: "img4.13.8-x86-64-appsub"
+  sshPublicKey: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCytEGtXcIaePsKb1rpeL9ynF3FZIfoC394xnau+jdn417N6PM+g2YWz5fk+T3zfuIvI9bMXGqROIW/6NmxJCMIj0xfmfThBmYpDW42Ur5bXh9U1EOmb/bzfwwkdOVZEItwkC5nDM/9kZR9A1iHmMn0MFTko2vyCBbzvgw6Mvtv0Oz/VMkrbLABxlt513lueLJk1PnVIk5hi7B0R74y19FaiJOj6aXCmEfjObVhJASJxnEEQsHGXisqB8T47/rS23pxjoYJlbaEidq/V/FPvGt3Ftxuf4m9cUEmp7wxkG1vq40C4AaeZ/ypy0dMq6q9vUgCO7EKEbtu64kCmu+r+MfePG2H+raTEQbcqD1yewo3bWrDGGTKN7/EiQ3pl/KsptrxxJBTSlp5B2IPvbE7WveWNLG1cWniH+A9a+1GZo5YO69GSz7iRAs7w38fHb0pNn0TKh8lzTxOEijR3Sdsvjk6+Mx4a+7/huRnIO5Uhr6XNfWge+YnRgUJ7G2rBtJfl7M= root@core-infra"
+  clusters:
+  - clusterName: "core"
+    networkType: "OVNKubernetes"
+    clusterLabels:
+      group-du-3node: ""
+      common: true
+      sites : "mnc"
+    clusterNetwork:
+      - cidr: 10.128.0.0/14
+        hostPrefix: 23
+    machineNetwork:
+      - cidr: 10.19.1.0/25
+    serviceNetwork:
+      - 172.16.0.0/16
+    apiVIP: 10.19.1.6
+    ingressVIP: 10.19.1.7
+    additionalNTPSources:
+      - 2.rhel.pool.ntp.org
+      - pool.nyp.org
+      - clock.corp.redhat.com
+    nodes:
+      - hostName: "mno-master-0.core.450.org"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia://10.19.142.64/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName: 
+          name: "mnc-bmc-secret"
+        bmc:
+          disableCertificateVerification: "true"        
+        bootMACAddress: "b4:83:51:00:b6:10"
+        bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/vda"
+        cpuset: "0-1,9-12,14-15"
+        nodeNetwork:
+          interfaces:
+            - name: ens1f0
+              macAddress: "b4:83:51:00:b6:10"
+          config:
+            interfaces:
+              - name: ens1f0
+                type: ethernet
+                state: up
+                macAddress: "b4:83:51:00:b6:10"
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 10.19.1.64
+                    prefix-length: 25
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                search:
+                - r450.org
+                - core.r450.org
+                - sno.r450.org
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
+      - hostName: "mno-master-1.core.r450.org"
+        role: "master"
+        automatedCleaningMode: "metadata"
+        bmcAddress: "idrac-virtualmedia://10.19.142.66/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName: 
+          name: "mnc-bmc-secret"       
+        bootMACAddress: "B4:83:51:00:B4:28"
+        bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/vda"
+        cpuset: "0-1,9-12,14-15"
+        nodeNetwork:
+          interfaces:
+            - name: ens1f0
+              macAddress: "B4:83:51:00:B4:28"
+          config:
+            interfaces:
+              - name: ens1f0
+                type: ethernet
+                state: up
+                macAddress: "B4:83:51:00:B4:28"
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 192.168.18.66
+                    prefix-length: 25
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                search:
+                - r450.org
+                - core.r450.org
+                - sno.r450.org
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
+      - hostName: "mno-master-2.core.r450.org"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia://10.19.142.69/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName: 
+          name: "mnc-bmc-secret"
+        bmc:
+          disableCertificateVerification: "true"        
+        bootMACAddress: "B4:83:51:00:B6:0C"
+        bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/vda"
+        cpuset: "0-1,9-12,14-15"
+        nodeNetwork:
+          interfaces:
+            - name: ens1f0
+              macAddress: "B4:83:51:00:B6:0C"
+          config:
+            interfaces:
+              - name: ens1f0
+                type: ethernet
+                state: up
+                macAddress: "B4:83:51:00:B6:0C"
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 10.19.1.69  
+                    prefix-length: 25
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                search:
+                - r450.org
+                - core.r450.org
+                - sno.r450.org
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
