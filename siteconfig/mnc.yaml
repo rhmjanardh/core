@@ -95,7 +95,7 @@ spec:
                 ipv4:
                   enabled: true
                   address:
-                  - ip: 192.168.18.66
+                  - ip: 10.19.1.66
                     prefix-length: 25
                 ipv6:
                   enabled: false
