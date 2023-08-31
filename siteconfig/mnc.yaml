@@ -2,7 +2,7 @@ apiVersion: ran.openshift.io/v1
 kind: SiteConfig
 metadata:
   name: "mnc"
-  namespace: "mnc"
+  namespace: "core"
 spec:
   baseDomain: "r450.org"
   pullSecretRef:
