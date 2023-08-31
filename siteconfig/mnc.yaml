@@ -51,7 +51,6 @@ spec:
               - name: ens1f0
                 type: ethernet
                 state: up
-                macAddress: "b4:83:51:00:b6:10"
                 ipv4:
                   enabled: true
                   address:
@@ -93,7 +92,6 @@ spec:
               - name: ens1f0
                 type: ethernet
                 state: up
-                macAddress: "B4:83:51:00:B4:28"
                 ipv4:
                   enabled: true
                   address:
@@ -136,7 +134,6 @@ spec:
               - name: ens1f0
                 type: ethernet
                 state: up
-                macAddress: "B4:83:51:00:B6:0C"
                 ipv4:
                   enabled: true
                   address:
