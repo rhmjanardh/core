@@ -56,8 +56,8 @@ spec:
     #- fileName: PaoOperatorStatus.yaml
       #policyName: "subscriptions-policy"
       #complianceType: mustnothave       
-    - fileName: ReduceMonitoringFootprint.yaml
-      policyName: "config-policy"
+    #- fileName: ReduceMonitoringFootprint.yaml
+      #policyName: "config-policy"
     #
     # These CRs are in support of installation from a disconnected registry
     #
