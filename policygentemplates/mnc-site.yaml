@@ -28,22 +28,22 @@ spec:
         numVfs: 8
         priority: 10
         resourceName: du_fh
-    - fileName: SriovNetwork.yaml
-      policyName: "config-policy"
-      metadata:
-        name: "sriov-nw-du-mh"
-      spec:
-        resourceName: du_mh
-        vlan: 208
-    - fileName: SriovNetworkNodePolicy.yaml
-      policyName: "config-policy"
-      metadata:
-        name: "sriov-nnp-du-mh"
-      spec:
-        deviceType: vfio-pci
-        isRdma: false
-        nicSelector:
-          pfNames: ["ens1f1"]
-        numVfs: 8
-        priority: 10
-        resourceName: du_mh
+    #- fileName: SriovNetwork.yaml
+      #policyName: "config-policy"
+      #metadata:
+        #name: "sriov-nw-du-mh"
+      #spec:
+        #resourceName: du_mh
+        #vlan: 208
+    #- fileName: SriovNetworkNodePolicy.yaml
+      #policyName: "config-policy"
+      #metadata:
+        #name: "sriov-nnp-du-mh"
+      #spec:
+        #deviceType: vfio-pci
+        #isRdma: false
+        #nicSelector:
+          #pfNames: ["ens1f1"]
+        #numVfs: 8
+        #priority: 10
+        #resourceName: du_mh
