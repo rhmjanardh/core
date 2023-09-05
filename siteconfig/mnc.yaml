@@ -212,7 +212,7 @@ spec:
         nodeNetwork:
           interfaces:
             - name: ens1f0
-              macAddress: " B4:83:51:00:B5:30"
+              macAddress: "B4:83:51:00:B5:30"
           config:
             interfaces:
               - name: ens1f0
