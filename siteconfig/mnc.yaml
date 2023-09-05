@@ -155,3 +155,87 @@ spec:
                 next-hop-interface: ens1f0
                 next-hop-address: 10.19.1.126
                 table-id: 254
+      - hostName: "mno-worker-0.core.r450.org"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia://10.19.142.67/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName: 
+          name: "core-bmc-secret"
+        bmc:
+          disableCertificateVerification: "true"        
+        bootMACAddress: "B4:83:51:00:B1:2A"
+        bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/sda"
+        cpuset: "0-1,9-12,14-15"
+        nodeNetwork:
+          interfaces:
+            - name: ens1f0
+              macAddress: "B4:83:51:00:B1:2A"
+          config:
+            interfaces:
+              - name: ens1f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 10.19.1.67  
+                    prefix-length: 25
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                search:
+                - r450.org
+                - core.r450.org
+                - sno.r450.org
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
+      - hostName: "mno-worker-1.core.r450.org"
+        role: "master"
+        bmcAddress: "idrac-virtualmedia://10.19.142.68/redfish/v1/Systems/System.Embedded.1"
+        bmcCredentialsName: 
+          name: "core-bmc-secret"
+        bmc:
+          disableCertificateVerification: "true"        
+        bootMACAddress: " B4:83:51:00:B5:30"
+        bootMode: "UEFI"
+        rootDeviceHints:
+          deviceName: "/dev/sda"
+        cpuset: "0-1,9-12,14-15"
+        nodeNetwork:
+          interfaces:
+            - name: ens1f0
+              macAddress: " B4:83:51:00:B5:30"
+          config:
+            interfaces:
+              - name: ens1f0
+                type: ethernet
+                state: up
+                ipv4:
+                  enabled: true
+                  address:
+                  - ip: 10.19.1.68 
+                    prefix-length: 25
+                ipv6:
+                  enabled: false
+            dns-resolver:
+              config:
+                search:
+                - r450.org
+                - core.r450.org
+                - sno.r450.org
+                server:
+                - 10.19.1.9
+            routes:
+              config:
+              - destination: 0.0.0.0/0
+                next-hop-interface: ens1f0
+                next-hop-address: 10.19.1.126
+                table-id: 254
