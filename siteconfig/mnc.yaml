@@ -156,7 +156,7 @@ spec:
                 next-hop-address: 10.19.1.126
                 table-id: 254
       - hostName: "mno-worker-0.core.r450.org"
-        role: "master"
+        role: "worker"
         bmcAddress: "idrac-virtualmedia://10.19.142.67/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName: 
           name: "core-bmc-secret"
@@ -198,7 +198,7 @@ spec:
                 next-hop-address: 10.19.1.126
                 table-id: 254
       - hostName: "mno-worker-1.core.r450.org"
-        role: "master"
+        role: "worker"
         bmcAddress: "idrac-virtualmedia://10.19.142.68/redfish/v1/Systems/System.Embedded.1"
         bmcCredentialsName: 
           name: "core-bmc-secret"
