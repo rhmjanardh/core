@@ -204,7 +204,7 @@ spec:
           name: "core-bmc-secret"
         bmc:
           disableCertificateVerification: "true"        
-        bootMACAddress: " B4:83:51:00:B5:30"
+        bootMACAddress: "B4:83:51:00:B5:30"
         bootMode: "UEFI"
         rootDeviceHints:
           deviceName: "/dev/sda"
